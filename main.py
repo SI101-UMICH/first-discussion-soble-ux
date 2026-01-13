@@ -1,11 +1,11 @@
 import requests
 
-TMDB_API_KEY = ""
+TMDB_API_KEY = "aea51419e79ddc1a54b01ea8305e2cc4"
 
 def get_movie(title):
     url = (
         "https://api.themoviedb.org/3/search/movie"
-        f"?query={title}&api_key={aea51419e79ddc1a54b01ea8305e2cc4}"
+        f"?query={title}&api_key={TMDB_API_KEY}"
     )
     response = requests.get(url)
     data = response.json()
@@ -38,6 +38,6 @@ def get_movie(title):
     return data["results"][0]
 
 if __name__ == "__main__":
-    movie = get_movie("Inception")
+    movie = get_movie("Forrest Gump")
     print(movie)
     print(movie["title"])
